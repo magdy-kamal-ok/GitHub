@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  GitHub
+
+  Created by mac on 7/24/19.
+  Copyright © 2019 OwnProjects. All rights reserved.
+*/
+
+"appName" = "GitHub";
+"internertConnectionDisconnected" = "Please be Informed Your internet Connection Disconnected";
+"internertConnectionReconnected" = "Please be Informed Your internet Connection Reconnected";
+"noExisitingCashedData" = "Please be Informed That There is no cached data we will try request this data";
+"githubScreenTitle" = "REPOS";
+

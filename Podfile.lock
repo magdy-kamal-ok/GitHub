@@ -1,0 +1,68 @@
+PODS:
+  - Alamofire (4.8.2)
+  - ObjectMapper (3.4.2)
+  - "ObjectMapper+Realm (0.6)":
+    - ObjectMapper
+    - RealmSwift
+  - ReachabilitySwift (4.3.0)
+  - Realm (3.14.1):
+    - Realm/Headers (= 3.14.1)
+  - Realm/Headers (3.14.1)
+  - RealmSwift (3.14.1):
+    - Realm (= 3.14.1)
+  - RxCocoa (4.5.0):
+    - RxSwift (>= 4.4.2, ~> 4.4)
+  - RxSwift (4.5.0)
+  - RxSwiftUtilities (2.1.0):
+    - RxCocoa (~> 4.0)
+    - RxSwift (~> 4.0)
+  - SDWebImage (4.4.6):
+    - SDWebImage/Core (= 4.4.6)
+  - SDWebImage/Core (4.4.6)
+  - SVProgressHUD (2.2.5)
+  - TWMessageBarManager (1.8.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - ObjectMapper
+  - "ObjectMapper+Realm"
+  - ReachabilitySwift (= 4.3.0)
+  - RealmSwift
+  - RxSwift
+  - RxSwiftUtilities
+  - SDWebImage (= 4.4.6)
+  - SVProgressHUD
+  - TWMessageBarManager
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - ObjectMapper
+    - "ObjectMapper+Realm"
+    - ReachabilitySwift
+    - Realm
+    - RealmSwift
+    - RxCocoa
+    - RxSwift
+    - RxSwiftUtilities
+    - SDWebImage
+    - SVProgressHUD
+    - TWMessageBarManager
+
+SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
+  "ObjectMapper+Realm": 4cf44ed3202a73f08594e21e13eb3f8aa9b5a664
+  ReachabilitySwift: 408477d1b6ed9779dba301953171e017c31241f3
+  Realm: e12c9c2387d05c5bba3a9c394838f5870e85763b
+  RealmSwift: a82eab9b04c3e1616082c7e17aa300740847769c
+  RxCocoa: cbf70265dc65a981d4ac982e513c10cf23df24a0
+  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
+  RxSwiftUtilities: b486df7454cc867c3ea626ce24110511159e7044
+  SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  TWMessageBarManager: fd84e7948ba7968a2b5d9454859135761214ec56
+
+PODFILE CHECKSUM: 7d5c9f5b857d10b0651a56ea1e2828ffcef88f9a
+
+COCOAPODS: 1.5.3
