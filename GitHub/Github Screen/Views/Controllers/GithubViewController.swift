@@ -20,6 +20,7 @@ class GithubViewController: BaseGithubViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.setAttributedTitle()
+        setSearchBarDelegate()
         setGithubTitle()
         setupPagination()
         setupSwipeRefresh()
@@ -36,8 +37,8 @@ class GithubViewController: BaseGithubViewController {
 
     func listenToReposListResponse()
     {
-        githubViewModel.observableTagList.subscribe(onNext: { (tagsList) in
-            self.reposList = tagsList
+        githubViewModel.observableGithubRepoList.subscribe(onNext: { (reposList) in
+            self.reposList = reposList
             self.setTableViewDataSource()
 
         }, onError: { (error) in
@@ -48,9 +49,12 @@ class GithubViewController: BaseGithubViewController {
 
     }
 
-    func setGithubTitle()
+    func setSearchBarDelegate()
     {
         self.githubSearchBar.delegate = self
+    }
+    func setGithubTitle()
+    {
         self.title = Constants.githubScreenTitle.localized
     }
     func setTableViewDataSource()
@@ -121,18 +125,12 @@ extension GithubViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.githubSearchBar.becomeFirstResponder()
-        self.githubSearchBar.showsCancelButton = true
+        self.githubSearchBar.endEditing(true)
+        
         if let searchText = searchBar.text
         {
             self.githubViewModel.getReposWith(text: searchText)
         }
     }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        self.githubSearchBar.showsCancelButton = false
-        self.githubSearchBar.resignFirstResponder()
-        
-    }
-    
     
 }

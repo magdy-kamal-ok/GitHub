@@ -19,15 +19,27 @@ class Constants {
 
     public static let appName = "appName"
     public static let internertConnectionDisconnected = "internertConnectionDisconnected"
-    public static let tagSectionTitle = "tagSectionTitle"
     public static let internertConnectionReconnected = "internertConnectionReconnected"
     public static let githubScreenTitle = "githubScreenTitle"
     public static let noExisitingCashedData = "noExisitingCashedData"
+    public static let noUsersWithName = "noUsersWithName"
 
-    // access identifiers
+    // MARK: access identifiers
     public static let tableViewIdentifier = "menuListTableView"
     public static let backButtonIdentifier = "backButton"
     public static let searchBarIdentifier = "searchBar"
     
+    public static let repoTitleIdentifier = "repoTitle"
+    public static let repoDateIdentifier = "repoDate"
+    public static let repoDescIdentifier = "repoDesc"
+    public static let repoOwnerImageIdentifier = "repoOwnerImage"
+    public static let repoOwnerZoomedInImageIdentifier = "repoOwnerZoomedInImage"
+    public static let repoForksIdentifier = "repoForks"
+    public static let repoLanguageIdentifier = "repoLanguage"
+    public static let repoLoadMoreIdentifier = "repoLoadMore"
+    
+    // MARK: DateFormats Constants
+    public static let yearMonthDayFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+    public static let shortMonthDayYearFormat = "MMM dd,yyyy"
 
 }

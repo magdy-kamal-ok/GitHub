@@ -26,13 +26,13 @@
                     <textInputTraits key="textInputTraits"/>
                 </searchBar>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Y4V-JE-z28">
-                    <rect key="frame" x="0.0" y="76" width="375" height="591"/>
+                    <rect key="frame" x="0.0" y="80" width="375" height="587"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Y4V-JE-z28" firstAttribute="top" secondItem="MOf-NC-MWN" secondAttribute="bottom" id="Bux-p4-56g"/>
+                <constraint firstItem="Y4V-JE-z28" firstAttribute="top" secondItem="MOf-NC-MWN" secondAttribute="bottom" constant="4" id="Bux-p4-56g"/>
                 <constraint firstItem="MOf-NC-MWN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="FUy-M6-92m"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Y4V-JE-z28" secondAttribute="trailing" id="Fz4-wk-5wc"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Y4V-JE-z28" secondAttribute="bottom" id="GOB-8q-c5T"/>

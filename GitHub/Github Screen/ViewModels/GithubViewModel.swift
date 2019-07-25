@@ -18,10 +18,10 @@ class GithubViewModel: BaseNetworkConnectionViewModel {
     public private(set) var userName:String = ""
     private var reposList = [RepoItemModel]()
     public private(set) var isLoadingMore = false
-    private var subjectTagList = PublishSubject<[RepoItemModel]>()
+    private var subjectGithubRepoList = PublishSubject<[RepoItemModel]>()
     
-    public var observableTagList:Observable<[RepoItemModel]>{
-        return subjectTagList.asObservable()
+    public var observableGithubRepoList:Observable<[RepoItemModel]>{
+        return subjectGithubRepoList.asObservable()
     }
     
     override init() {
@@ -31,10 +31,10 @@ class GithubViewModel: BaseNetworkConnectionViewModel {
     
     private func initializeSubscribers()
     {
-        githubRepo.objObservableLocal.subscribe(onNext: { (tagsResponseModel) in
+        githubRepo.objObservableLocal.subscribe(onNext: { (cachedRepoModel) in
             if !self.isNetworkConnected()
             {
-                self.handleLoadedRepos(reposList: tagsResponseModel.reposList.toArray())
+                self.handleLoadedRepos(reposList: cachedRepoModel.reposList.toArray())
             }
         }, onError: { (error) in
             print(error)
@@ -42,8 +42,8 @@ class GithubViewModel: BaseNetworkConnectionViewModel {
             print("Completed")
         }).disposed(by: disposeBag)
         
-        githubRepo.objObservableRemoteData.subscribe(onNext: { (tagsResponseModel) in
-            self.handleLoadedRepos(reposList: tagsResponseModel)
+        githubRepo.objObservableRemoteData.subscribe(onNext: { (reposList) in
+            self.handleLoadedRepos(reposList: reposList)
         }, onError: { (error) in
             print(error)
         }, onCompleted: {
@@ -62,21 +62,36 @@ class GithubViewModel: BaseNetworkConnectionViewModel {
     
     func handleLoadedRepos(reposList: [RepoItemModel])
     {
-        if isLoadingMore
+        if reposList.count != 0
         {
-            isLoadingMore = !isLoadingMore
+            if isLoadingMore
+            {
+                isLoadingMore = !isLoadingMore
+            }
+            self.reposList.append(contentsOf: reposList)
         }
-        self.reposList.append(contentsOf: reposList)
-        self.subjectTagList.onNext(self.reposList)
+        else
+        {
+            if self.offset == 1
+            {
+                self.resetDataSource()
+            }
+            if self.isNetworkConnected() && self.offset == 1
+            {
+                showInfoMessage(msg: Constants.noUsersWithName.localized)
+            }
+        }
+        self.subjectGithubRepoList.onNext(self.reposList)
         self.hideProgressLoaderIndicator()
     }
     
 
-    func getRepoList()
+    private func getRepoList()
     {
         self.showProgressLoaderIndicator()
-        self.githubRepo.getTagsList(userName: self.userName, offset: self.offset)
+        self.githubRepo.getRepoList(userName: self.userName, offset: self.offset)
     }
+    
     func getReposWith(text:String)
     {
         resetDataSource()
@@ -93,7 +108,7 @@ class GithubViewModel: BaseNetworkConnectionViewModel {
             self.getRepoList()
         }
     }
-    func resetDataSource()
+    private func resetDataSource()
     {
         self.reposList.removeAll()
         self.offset = 1
@@ -126,7 +141,7 @@ class GithubViewModel: BaseNetworkConnectionViewModel {
         
     }
     
-    func handleErrorModel(errorModel:ErrorModel)
+    private func handleErrorModel(errorModel:ErrorModel)
     {
 
         self.hideProgressLoaderIndicator()
@@ -134,6 +149,7 @@ class GithubViewModel: BaseNetworkConnectionViewModel {
         {
             if !self.isNetworkConnected()
             {
+                self.handleLoadedRepos(reposList: [])
                 showInfoMessage(msg: errorModel.desc)
             }
         }

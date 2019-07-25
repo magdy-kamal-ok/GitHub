@@ -105,6 +105,8 @@ class BaseGithubViewController: UIViewController {
         paginationIndicator = UIActivityIndicatorView.init()
         paginationIndicator?.color = UIColor.gray
         paginationIndicator?.sizeToFit()
+        paginationIndicator?.accessibilityIdentifier = Constants.repoLoadMoreIdentifier
+        paginationIndicator?.isAccessibilityElement = true
         paginationIndicator?.startAnimating()
         self.githubTableView.tableFooterView =  paginationIndicator
     }

@@ -1,5 +1,5 @@
 //
-//  TagModel.swift
+//  RepoItemModel.swift
 //  GitHub
 //
 //  Created by mac on 7/24/19.

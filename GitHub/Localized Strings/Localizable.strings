@@ -10,5 +10,6 @@
 "internertConnectionDisconnected" = "Please be Informed Your internet Connection Disconnected";
 "internertConnectionReconnected" = "Please be Informed Your internet Connection Reconnected";
 "noExisitingCashedData" = "Please be Informed That There is no cached data we will try request this data";
+"noUsersWithName" = "Please be Informed That There is no User with the name you entered.";
 "githubScreenTitle" = "REPOS";
 

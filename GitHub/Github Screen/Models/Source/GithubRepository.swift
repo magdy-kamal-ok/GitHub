@@ -1,5 +1,5 @@
 //
-//  TagsRepository.swift
+//  GithubRepository.swift
 //  GitHub
 //
 //  Created by mac on 7/24/19.
@@ -16,11 +16,11 @@ class GithubRepository: GenericBaseRepository<RepoItemModel, RepoCacheModel> {
     var offset:Int = 1
 
     override func getPredicate() -> NSPredicate? {
-        let predicate = NSPredicate.init(format: "userName=%@ And offset=%i", self.userName, self.offset)
+        let predicate = NSPredicate.init(format: "userName LIKE[c] %@ And offset=%i", self.userName, self.offset)
         return predicate
     }
 
-    func getTagsList(userName: String, offset:Int)
+    func getRepoList(userName: String, offset:Int)
     {
         self.userName = userName
         self.offset = offset

@@ -7,10 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0436264F22E933B9007874EE /* HelperDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436264E22E933B9007874EE /* HelperDateFormatter.swift */; };
+		0436265122E934DE007874EE /* GitHubHelperDateFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436265022E934DE007874EE /* GitHubHelperDateFormatterTests.swift */; };
+		0436265622E935C8007874EE /* GitHubRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436265222E935C7007874EE /* GitHubRepositoryTests.swift */; };
+		0436265722E935C8007874EE /* GitHubGenericDaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436265322E935C7007874EE /* GitHubGenericDaoTests.swift */; };
+		0436265822E935C8007874EE /* GitHubViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436265422E935C7007874EE /* GitHubViewModelTests.swift */; };
+		0436265922E935C8007874EE /* GitHubGenericRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436265522E935C8007874EE /* GitHubGenericRequestTests.swift */; };
+		0436265A22E94AEB007874EE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F570B722E8B8980034B1C0 /* Constants.swift */; };
 		04F5705122E8B51B0034B1C0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F5705022E8B51B0034B1C0 /* AppDelegate.swift */; };
 		04F5705822E8B51D0034B1C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04F5705722E8B51D0034B1C0 /* Assets.xcassets */; };
 		04F5705B22E8B51D0034B1C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F5705922E8B51D0034B1C0 /* LaunchScreen.storyboard */; };
-		04F5706622E8B51D0034B1C0 /* GitHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F5706522E8B51D0034B1C0 /* GitHubTests.swift */; };
 		04F5707122E8B51D0034B1C0 /* GitHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F5707022E8B51D0034B1C0 /* GitHubUITests.swift */; };
 		04F570B822E8B8980034B1C0 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F5707F22E8B8980034B1C0 /* UIHelper.swift */; };
 		04F570B922E8B8980034B1C0 /* GlobalUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F5708022E8B8980034B1C0 /* GlobalUtilities.swift */; };
@@ -61,13 +67,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0436264E22E933B9007874EE /* HelperDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperDateFormatter.swift; sourceTree = "<group>"; };
+		0436265022E934DE007874EE /* GitHubHelperDateFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubHelperDateFormatterTests.swift; sourceTree = "<group>"; };
+		0436265222E935C7007874EE /* GitHubRepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubRepositoryTests.swift; sourceTree = "<group>"; };
+		0436265322E935C7007874EE /* GitHubGenericDaoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubGenericDaoTests.swift; sourceTree = "<group>"; };
+		0436265422E935C7007874EE /* GitHubViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubViewModelTests.swift; sourceTree = "<group>"; };
+		0436265522E935C8007874EE /* GitHubGenericRequestTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubGenericRequestTests.swift; sourceTree = "<group>"; };
 		04F5704D22E8B51B0034B1C0 /* GitHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F5705022E8B51B0034B1C0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04F5705722E8B51D0034B1C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04F5705A22E8B51D0034B1C0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04F5705C22E8B51D0034B1C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04F5706122E8B51D0034B1C0 /* GitHubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		04F5706522E8B51D0034B1C0 /* GitHubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubTests.swift; sourceTree = "<group>"; };
 		04F5706722E8B51D0034B1C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04F5706C22E8B51D0034B1C0 /* GitHubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F5707022E8B51D0034B1C0 /* GitHubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubUITests.swift; sourceTree = "<group>"; };
@@ -180,7 +191,11 @@
 		04F5706422E8B51D0034B1C0 /* GitHubTests */ = {
 			isa = PBXGroup;
 			children = (
-				04F5706522E8B51D0034B1C0 /* GitHubTests.swift */,
+				0436265322E935C7007874EE /* GitHubGenericDaoTests.swift */,
+				0436265522E935C8007874EE /* GitHubGenericRequestTests.swift */,
+				0436265222E935C7007874EE /* GitHubRepositoryTests.swift */,
+				0436265422E935C7007874EE /* GitHubViewModelTests.swift */,
+				0436265022E934DE007874EE /* GitHubHelperDateFormatterTests.swift */,
 				04F5706722E8B51D0034B1C0 /* Info.plist */,
 			);
 			path = GitHubTests;
@@ -200,6 +215,7 @@
 			children = (
 				04F5707F22E8B8980034B1C0 /* UIHelper.swift */,
 				04F5708022E8B8980034B1C0 /* GlobalUtilities.swift */,
+				0436264E22E933B9007874EE /* HelperDateFormatter.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -702,6 +718,7 @@
 				04F5705122E8B51B0034B1C0 /* AppDelegate.swift in Sources */,
 				04F570B822E8B8980034B1C0 /* UIHelper.swift in Sources */,
 				04F570C722E8B8980034B1C0 /* GithubViewModel.swift in Sources */,
+				0436264F22E933B9007874EE /* HelperDateFormatter.swift in Sources */,
 				04F570DA22E8C6940034B1C0 /* OwnerModel.swift in Sources */,
 				04F570C022E8B8980034B1C0 /* UITableViewExtension.swift in Sources */,
 				04F570C222E8B8980034B1C0 /* CollectionExtensions.swift in Sources */,
@@ -718,7 +735,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04F5706622E8B51D0034B1C0 /* GitHubTests.swift in Sources */,
+				0436265722E935C8007874EE /* GitHubGenericDaoTests.swift in Sources */,
+				0436265622E935C8007874EE /* GitHubRepositoryTests.swift in Sources */,
+				0436265122E934DE007874EE /* GitHubHelperDateFormatterTests.swift in Sources */,
+				0436265922E935C8007874EE /* GitHubGenericRequestTests.swift in Sources */,
+				0436265822E935C8007874EE /* GitHubViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -726,6 +747,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0436265A22E94AEB007874EE /* Constants.swift in Sources */,
 				04F5707122E8B51D0034B1C0 /* GitHubUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
