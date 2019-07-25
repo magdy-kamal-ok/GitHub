@@ -91,16 +91,16 @@ class BaseGithubViewController: UIViewController {
             }
         }
     }
-    
+
     //MARK: Pagination
     func setupPagination() -> Void {
         hasPagination = true
     }
-    
+
     func handlePaginationRequest() {
         // override this when you need to handlePaginationRequest
     }
-    
+
     func showLoadingMoreView() -> Void {
         paginationIndicator = UIActivityIndicatorView.init()
         paginationIndicator?.color = UIColor.gray
@@ -108,18 +108,18 @@ class BaseGithubViewController: UIViewController {
         paginationIndicator?.accessibilityIdentifier = Constants.repoLoadMoreIdentifier
         paginationIndicator?.isAccessibilityElement = true
         paginationIndicator?.startAnimating()
-        self.githubTableView.tableFooterView =  paginationIndicator
+        self.githubTableView.tableFooterView = paginationIndicator
     }
-    
-    func removeLoadingMoreView(){
-        if paginationIndicator != nil{
+
+    func removeLoadingMoreView() {
+        if paginationIndicator != nil {
             if paginationIndicator!.isDescendant(of: self.view) {
                 paginationIndicator?.removeFromSuperview()
                 paginationIndicator = nil
             }
         }
     }
-    
+
 }
 
 
@@ -170,7 +170,7 @@ extension BaseGithubViewController: UITableViewDataSource {
 }
 
 extension BaseGithubViewController: UITableViewDelegate {
-    
+
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if scrollView == githubTableView {
             if ((scrollView.contentOffset.y + scrollView.frame.size.height) >= scrollView.contentSize.height) {

@@ -48,11 +48,11 @@ class GitHubViewModelTests: XCTestCase {
 
     func testGetLoadMoreListOfRepos()
     {
-        
+
         let expectation = XCTestExpectation.init(description: "get repos List")
         var responseResult: [RepoItemModel]!
         sut.observableGithubRepoList.subscribe({ (subObj) in
-            
+
             switch subObj
             {
             case .next(let responseObj):
@@ -63,10 +63,10 @@ class GitHubViewModelTests: XCTestCase {
             case .completed:
                 print("Completed")
             }
-            
+
         }).disposed(by: disposeBag)
         sut.getReposWith(text: "john")
-        
+
         wait(for: [expectation], timeout: 10)
         XCTAssert(responseResult.count > 0)
         sut.loadMoreRepos()
@@ -74,14 +74,14 @@ class GitHubViewModelTests: XCTestCase {
     }
     func testResetAllDataSources()
     {
-        
+
         sut.refreshReposList()
         XCTAssert(sut.offset == 1)
     }
 
     func testRestUserName()
     {
-        
+
         sut.clearReposList()
         XCTAssert(sut.userName.isEmpty)
     }

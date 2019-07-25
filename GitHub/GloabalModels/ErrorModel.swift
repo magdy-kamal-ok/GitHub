@@ -10,13 +10,13 @@ import Foundation
 import ObjectMapper
 import RealmSwift
 
-struct ErrorModel : Error{
+struct ErrorModel: Error {
 
-    
-    let desc:String
-    let code:Int
+
+    let desc: String
+    let code: Int
 }
-enum ErrorCodes:Int{
+enum ErrorCodes: Int {
     case noCached = 2000
     case remoteError = 2001
 }

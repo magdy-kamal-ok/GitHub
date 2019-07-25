@@ -14,21 +14,21 @@ class GithubViewModel: BaseNetworkConnectionViewModel {
 
     let disposeBag = DisposeBag()
     let githubRepo = GithubRepository()
-    public private(set) var offset:Int = 1
-    public private(set) var userName:String = ""
+    public private(set) var offset: Int = 1
+    public private(set) var userName: String = ""
     private var reposList = [RepoItemModel]()
     public private(set) var isLoadingMore = false
     private var subjectGithubRepoList = PublishSubject<[RepoItemModel]>()
-    
-    public var observableGithubRepoList:Observable<[RepoItemModel]>{
+
+    public var observableGithubRepoList: Observable<[RepoItemModel]> {
         return subjectGithubRepoList.asObservable()
     }
-    
+
     override init() {
         super.init()
         initializeSubscribers()
     }
-    
+
     private func initializeSubscribers()
     {
         githubRepo.objObservableLocal.subscribe(onNext: { (cachedRepoModel) in
@@ -37,29 +37,29 @@ class GithubViewModel: BaseNetworkConnectionViewModel {
                 self.handleLoadedRepos(reposList: cachedRepoModel.reposList.toArray())
             }
         }, onError: { (error) in
-            print(error)
-        }, onCompleted: {
-            print("Completed")
-        }).disposed(by: disposeBag)
-        
+                print(error)
+            }, onCompleted: {
+                print("Completed")
+            }).disposed(by: disposeBag)
+
         githubRepo.objObservableRemoteData.subscribe(onNext: { (reposList) in
             self.handleLoadedRepos(reposList: reposList)
         }, onError: { (error) in
-            print(error)
-        }, onCompleted: {
-            print("Completed")
-        }).disposed(by: disposeBag)
-        
+                print(error)
+            }, onCompleted: {
+                print("Completed")
+            }).disposed(by: disposeBag)
+
         githubRepo.objObservableErrorModel.subscribe(onNext: { (errorModel) in
             self.handleErrorModel(errorModel: errorModel)
         }, onError: { (error) in
-            print(error)
-        }, onCompleted: {
-            print("Completed")
-        }).disposed(by: disposeBag)
-        
+                print(error)
+            }, onCompleted: {
+                print("Completed")
+            }).disposed(by: disposeBag)
+
     }
-    
+
     func handleLoadedRepos(reposList: [RepoItemModel])
     {
         if reposList.count != 0
@@ -84,21 +84,21 @@ class GithubViewModel: BaseNetworkConnectionViewModel {
         self.subjectGithubRepoList.onNext(self.reposList)
         self.hideProgressLoaderIndicator()
     }
-    
+
 
     private func getRepoList()
     {
         self.showProgressLoaderIndicator()
         self.githubRepo.getRepoList(userName: self.userName, offset: self.offset)
     }
-    
-    func getReposWith(text:String)
+
+    func getReposWith(text: String)
     {
         resetDataSource()
         self.userName = text
         self.getRepoList()
     }
-    
+
     func loadMoreRepos()
     {
         if !isLoadingMore
@@ -113,35 +113,35 @@ class GithubViewModel: BaseNetworkConnectionViewModel {
         self.reposList.removeAll()
         self.offset = 1
     }
-    
+
     func refreshReposList()
     {
         self.resetDataSource()
         self.getRepoList()
     }
-    
+
     func clearReposList()
     {
         resetDataSource()
         self.userName = ""
     }
-    
-    func showInfoMessage(msg:String)
+
+    func showInfoMessage(msg: String)
     {
         UIHelper.showInfoMessage(msg, title: Constants.appName.localized)
     }
-    
+
     override func handleInternetConnectionReconnected() {
-       showInfoMessage(msg: Constants.internertConnectionReconnected.localized)
-       self.refreshReposList()
+        showInfoMessage(msg: Constants.internertConnectionReconnected.localized)
+        self.refreshReposList()
     }
-    
+
     override func handleInternetConnectionDisconnected() {
         showInfoMessage(msg: Constants.internertConnectionDisconnected.localized)
-        
+
     }
-    
-    private func handleErrorModel(errorModel:ErrorModel)
+
+    private func handleErrorModel(errorModel: ErrorModel)
     {
 
         self.hideProgressLoaderIndicator()
@@ -155,8 +155,8 @@ class GithubViewModel: BaseNetworkConnectionViewModel {
         }
         else
         {
-          showInfoMessage(msg: errorModel.desc)
-            
+            showInfoMessage(msg: errorModel.desc)
+
         }
     }
 

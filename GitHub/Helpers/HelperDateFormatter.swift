@@ -9,15 +9,15 @@
 import Foundation
 
 class HelperDateFormatter: NSObject {
-    
+
     class func formatDate(date: Date, format: String) -> String
     {
         let dateFromatter = DateFormatter()
         dateFromatter.dateFormat = format
         return dateFromatter.string(from: date)
     }
-    
-    
+
+
     class func getDateFromString(dateString: String, format: String) -> Date
     {
         let dateFromatter = DateFormatter()
@@ -31,6 +31,6 @@ class HelperDateFormatter: NSObject {
             assertionFailure("failed to convert Date")
             return Date()
         }
-        
+
     }
 }

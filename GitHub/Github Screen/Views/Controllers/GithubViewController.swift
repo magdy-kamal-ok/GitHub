@@ -25,7 +25,7 @@ class GithubViewController: BaseGithubViewController {
         setupPagination()
         setupSwipeRefresh()
         listenToReposListResponse()
-        
+
 
     }
 
@@ -71,7 +71,7 @@ class GithubViewController: BaseGithubViewController {
         }
         else
         {
-          self.checkRefreshControlState()
+            self.checkRefreshControlState()
         }
     }
 
@@ -85,52 +85,52 @@ class GithubViewController: BaseGithubViewController {
 
     override func getCellHeight(indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
-        
+
     }
 
     override func getCustomCell(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-            let cell = tableView.dequeue() as GithubTableViewCell
-            let repoItem = self.reposList[indexPath.row]
-            cell.configureCell(repoItemModel: repoItem)
-            return cell
-        
+        let cell = tableView.dequeue() as GithubTableViewCell
+        let repoItem = self.reposList[indexPath.row]
+        cell.configureCell(repoItemModel: repoItem)
+        return cell
+
     }
     override func didSelectCellAt(indexPath: IndexPath) {
-    
+
         let repoItem = self.reposList[indexPath.row]
         guard let url = URL(string: repoItem.repoUrl) else {
             return //be safe
         }
-        
+
         if #available(iOS 10.0, *) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         } else {
             UIApplication.shared.openURL(url)
         }
-        
+
     }
     override func handlePaginationRequest() {
-        
+
         if !self.githubViewModel.isLoadingMore && self.reposList.count > 0
         {
             self.showLoadingMoreView()
             self.githubViewModel.loadMoreRepos()
         }
     }
-    
+
 }
 
 extension GithubViewController: UISearchBarDelegate {
-    
+
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         self.githubSearchBar.becomeFirstResponder()
         self.githubSearchBar.endEditing(true)
-        
+
         if let searchText = searchBar.text
         {
             self.githubViewModel.getReposWith(text: searchText)
         }
     }
-    
+
 }

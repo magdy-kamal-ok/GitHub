@@ -13,7 +13,7 @@ class Constants {
     private static let baseUrl = "https://api.github.com/"
     public static let reposUsersApiUrl = baseUrl + "users/"
     public static let reposApiUrl = "/repos?page="
-    
+
     public static let imagePlaceHolderName = "avatar"
 
 
@@ -28,7 +28,7 @@ class Constants {
     public static let tableViewIdentifier = "menuListTableView"
     public static let backButtonIdentifier = "backButton"
     public static let searchBarIdentifier = "searchBar"
-    
+
     public static let repoTitleIdentifier = "repoTitle"
     public static let repoDateIdentifier = "repoDate"
     public static let repoDescIdentifier = "repoDesc"
@@ -37,7 +37,7 @@ class Constants {
     public static let repoForksIdentifier = "repoForks"
     public static let repoLanguageIdentifier = "repoLanguage"
     public static let repoLoadMoreIdentifier = "repoLoadMore"
-    
+
     // MARK: DateFormats Constants
     public static let yearMonthDayFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
     public static let shortMonthDayYearFormat = "MMM dd,yyyy"

@@ -15,13 +15,13 @@ class RepoCacheModel: Object, Mappable {
 
 
     @objc dynamic var userName: String = ""
-    
-    @objc dynamic var offset: Int = 0{
+
+    @objc dynamic var offset: Int = 0 {
         didSet {
             compoundKey = compoundKeyValue()
         }
     }
-    @objc dynamic var id: Int = 0{
+    @objc dynamic var id: Int = 0 {
         didSet {
             compoundKey = compoundKeyValue()
         }
@@ -35,18 +35,18 @@ class RepoCacheModel: Object, Mappable {
     }
 
     func mapping(map: Map) {
-       
-        
+
+
     }
 
     override class func primaryKey() -> String? {
         return "compoundKey";
     }
-    
+
     private func compoundKeyValue() -> String {
         return "\(id)-\(offset)"
     }
-    
+
 
 
 }

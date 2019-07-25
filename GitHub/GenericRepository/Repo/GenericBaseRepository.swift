@@ -102,17 +102,17 @@ class GenericBaseRepository<REMOTE:Mappable, LOCAL:Object>:
             return nil
         }
 
-    func insertList(remote:[REMOTE])
-    {
-        // Please override this and call
-        // insertDataToLocal(genericDataModel:
-    }
-    func insertDataToLocal(genericDataModel: LOCAL) {
-        // override this if needed
-        objGenericDao.insert(genericDataModel: genericDataModel)
-        self.objSubjectDao.onNext(genericDataModel)
+        func insertList(remote: [REMOTE])
+        {
+            // Please override this and call
+            // insertDataToLocal(genericDataModel:
+        }
+        func insertDataToLocal(genericDataModel: LOCAL) {
+            // override this if needed
+            objGenericDao.insert(genericDataModel: genericDataModel)
+            self.objSubjectDao.onNext(genericDataModel)
 
-    }
+        }
 }
 extension GenericBaseRepository {
 

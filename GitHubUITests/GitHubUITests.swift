@@ -72,7 +72,7 @@ class GitHubUITests: XCTestCase {
         expectation(for: exists, evaluatedWith: repoTitle, handler: nil)
         waitForExpectations(timeout: 10, handler: nil)
     }
-    
+
     func testRepoDateExists() {
         app.launch()
         let searchBar = app.otherElements[Constants.searchBarIdentifier]
@@ -85,7 +85,7 @@ class GitHubUITests: XCTestCase {
         expectation(for: exists, evaluatedWith: repoDate, handler: nil)
         waitForExpectations(timeout: 10, handler: nil)
     }
-    
+
     func testRepoDescExists() {
         app.launch()
         let searchBar = app.otherElements[Constants.searchBarIdentifier]
@@ -98,7 +98,7 @@ class GitHubUITests: XCTestCase {
         expectation(for: exists, evaluatedWith: repoDesc, handler: nil)
         waitForExpectations(timeout: 10, handler: nil)
     }
-    
+
     func testRepoLanguageExists() {
         app.launch()
         let searchBar = app.otherElements[Constants.searchBarIdentifier]
@@ -111,7 +111,7 @@ class GitHubUITests: XCTestCase {
         expectation(for: exists, evaluatedWith: repoLang, handler: nil)
         waitForExpectations(timeout: 10, handler: nil)
     }
-    
+
     func testRepoForksExists() {
         app.launch()
         let searchBar = app.otherElements[Constants.searchBarIdentifier]
@@ -124,8 +124,8 @@ class GitHubUITests: XCTestCase {
         expectation(for: exists, evaluatedWith: repoFork, handler: nil)
         waitForExpectations(timeout: 10, handler: nil)
     }
-    
-    
+
+
 
 
     func testReposZoomInImage() {
@@ -166,8 +166,8 @@ class GitHubUITests: XCTestCase {
         }
         waitForExpectations(timeout: 10, handler: nil)
     }
-    
-    
+
+
     func testReposListPullRefresh() {
         app.launch()
         let searchBar = app.otherElements[Constants.searchBarIdentifier]
@@ -180,7 +180,7 @@ class GitHubUITests: XCTestCase {
         start.press(forDuration: 0, thenDragTo: finish)
         _ = app.waitForExistence(timeout: 5)
         XCTAssert(tableView.cells.count == 30)
-        
+
     }
 
 }

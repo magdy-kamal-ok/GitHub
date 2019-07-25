@@ -27,7 +27,7 @@ class GenericRequestClass<U:Mappable>: GenericDataRemoteSource {
                             else {
                                 return
                         }
-                        var responseList:[U] = [U]()
+                        var responseList: [U] = [U]()
                         for item in value
                         {
                             responseList.append(U(JSON: item)!)

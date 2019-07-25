@@ -16,11 +16,11 @@ class GitHubGenericRequestTests: XCTestCase {
     let disposeBag = DisposeBag()
 
     override func setUp() {
-        
+
     }
 
     override func tearDown() {
-        
+
     }
 
     func testSuccessRepoRequestClass()
@@ -28,14 +28,14 @@ class GitHubGenericRequestTests: XCTestCase {
         let sut = GenericRequestClass<RepoItemModel>()
         let headers: HTTPHeaders = [
             "Content-Type": "application/json",
-            ]
+        ]
         let offset = 1
         let expectation = XCTestExpectation.init(description: "test success Reposs request")
         var responseResult: [RepoItemModel]!
-        var errorResponse:Error!
+        var errorResponse: Error!
         let url = Constants.reposUsersApiUrl + "john" + Constants.reposApiUrl + "\(offset)"
-        sut.callApi(url: url , params: nil, headers: headers)?.subscribe({ (subObj) in
-            
+        sut.callApi(url: url, params: nil, headers: headers)?.subscribe({ (subObj) in
+
             switch subObj
             {
             case .next(let responseObj):
@@ -47,26 +47,26 @@ class GitHubGenericRequestTests: XCTestCase {
             case .completed:
                 print("Completed")
             }
-            
+
         }).disposed(by: disposeBag)
         wait(for: [expectation], timeout: 10)
         XCTAssertNotNil(responseResult)
         XCTAssertNil(errorResponse)
     }
-    
+
     func testFailureRepoRequestClass()
     {
         let sut = GenericRequestClass<RepoItemModel>()
         let headers: HTTPHeaders = [
             "Content-Type": "application/json",
-            ]
+        ]
         let offset = 1
         let expectation = XCTestExpectation.init(description: "test success Reposs request")
         var responseResult: [RepoItemModel]!
-        var errorResponse:Error!
+        var errorResponse: Error!
         let url = "https://api.githubs.com/users/john" + Constants.reposApiUrl + "\(offset)"
-        sut.callApi(url: url , params: nil, headers: headers)?.subscribe({ (subObj) in
-            
+        sut.callApi(url: url, params: nil, headers: headers)?.subscribe({ (subObj) in
+
             switch subObj
             {
             case .next(let responseObj):
@@ -78,12 +78,12 @@ class GitHubGenericRequestTests: XCTestCase {
             case .completed:
                 print("Completed")
             }
-            
+
         }).disposed(by: disposeBag)
         wait(for: [expectation], timeout: 10)
         XCTAssertNil(responseResult)
         XCTAssertNotNil(errorResponse)
     }
 
-    
+
 }
