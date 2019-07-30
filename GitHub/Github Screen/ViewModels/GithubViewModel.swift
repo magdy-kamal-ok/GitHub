@@ -44,7 +44,7 @@ class GithubViewModel: BaseNetworkConnectionViewModel {
 
         githubRepo.objObservableRemoteData.subscribe(onNext: { (reposList) in
             self.handleLoadedRepos(reposList: reposList)
-        }, onError: { (error) in
+            }, onError: { (error) in
                 print(error)
             }, onCompleted: {
                 print("Completed")

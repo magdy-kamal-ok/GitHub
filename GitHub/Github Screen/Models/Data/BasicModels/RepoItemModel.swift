@@ -11,7 +11,7 @@ import RealmSwift
 import ObjectMapper
 import ObjectMapper_Realm
 
-class RepoItemModel: Object, Mappable {
+class RepoItemModel: BaseModel {
 
     @objc dynamic var id: Int = 0
     @objc dynamic var repoTitle: String = ""
@@ -26,7 +26,7 @@ class RepoItemModel: Object, Mappable {
         self.init()
     }
 
-    func mapping(map: Map) {
+    override func mapping(map: Map) {
 
         id              <- map["id"]
         repoTitle       <- map["name"]

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04279F3322F0E90A00DAEF88 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04279F3222F0E90A00DAEF88 /* BaseModel.swift */; };
 		0436264F22E933B9007874EE /* HelperDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436264E22E933B9007874EE /* HelperDateFormatter.swift */; };
 		0436265122E934DE007874EE /* GitHubHelperDateFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436265022E934DE007874EE /* GitHubHelperDateFormatterTests.swift */; };
 		0436265622E935C8007874EE /* GitHubRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436265222E935C7007874EE /* GitHubRepositoryTests.swift */; };
@@ -67,6 +68,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04279F3222F0E90A00DAEF88 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		0436264E22E933B9007874EE /* HelperDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperDateFormatter.swift; sourceTree = "<group>"; };
 		0436265022E934DE007874EE /* GitHubHelperDateFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubHelperDateFormatterTests.swift; sourceTree = "<group>"; };
 		0436265222E935C7007874EE /* GitHubRepositoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GitHubRepositoryTests.swift; sourceTree = "<group>"; };
@@ -148,6 +150,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04279F3122F0E8EC00DAEF88 /* BaseModels */ = {
+			isa = PBXGroup;
+			children = (
+				04279F3222F0E90A00DAEF88 /* BaseModel.swift */,
+			);
+			path = BaseModels;
+			sourceTree = "<group>";
+		};
 		04F5704422E8B51A0034B1C0 = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +233,7 @@
 		04F5708122E8B8980034B1C0 /* GenericRepository */ = {
 			isa = PBXGroup;
 			children = (
+				04279F3122F0E8EC00DAEF88 /* BaseModels */,
 				04F5708222E8B8980034B1C0 /* Local */,
 				04F5708422E8B8980034B1C0 /* Repo */,
 				04F5708722E8B8980034B1C0 /* Remote */,
@@ -713,6 +724,7 @@
 				04F570C822E8B8980034B1C0 /* BaseNetworkConnectionViewModel.swift in Sources */,
 				04F570BD22E8B8980034B1C0 /* GenericRequestClass.swift in Sources */,
 				04F570B922E8B8980034B1C0 /* GlobalUtilities.swift in Sources */,
+				04279F3322F0E90A00DAEF88 /* BaseModel.swift in Sources */,
 				04F570BF22E8B8980034B1C0 /* UIColorExtension.swift in Sources */,
 				04F570CD22E8B8980034B1C0 /* RepoItemModel.swift in Sources */,
 				04F5705122E8B51B0034B1C0 /* AppDelegate.swift in Sources */,

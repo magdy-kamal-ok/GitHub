@@ -42,7 +42,6 @@ class GithubRepository: GenericBaseRepository<RepoItemModel, RepoCacheModel> {
             {
                 repoCache.id = owner.id
             }
-            
             repoCache.userName = self.userName
             repoCache.offset = self.offset
             let repoList = List<RepoItemModel>()
@@ -55,7 +54,7 @@ class GithubRepository: GenericBaseRepository<RepoItemModel, RepoCacheModel> {
 
     func getHeaders() -> HTTPHeaders {
         let headers: HTTPHeaders = [
-            "Content-Type": "application/json",
+            "Content-Type": "application/json"
         ]
         return headers
     }

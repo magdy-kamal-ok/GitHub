@@ -10,7 +10,9 @@ import XCTest
 @testable import GitHub
 
 class GitHubUITests: XCTestCase {
+    
     var app: XCUIApplication!
+    
     override func setUp() {
         super.setUp()
         app = XCUIApplication()
@@ -155,7 +157,6 @@ class GitHubUITests: XCTestCase {
         let tableView = app.tables[Constants.tableViewIdentifier]
         let firstCell = tableView.cells.element(boundBy: 0)
         let repoOwnerImage = firstCell.images[Constants.repoOwnerImageIdentifier]
-
         let zoomImage = app.images[Constants.repoOwnerZoomedInImageIdentifier]
         let exists = NSPredicate(format: "exists == 1")
         expectation(for: exists, evaluatedWith: repoOwnerImage) { () -> Bool in

@@ -12,9 +12,6 @@ import ObjectMapper
 import RealmSwift
 import Alamofire
 
-
-
-
 typealias GenericDataSourceContract = GenericDataRemoteSource & GenericDataLocalSource
 
 

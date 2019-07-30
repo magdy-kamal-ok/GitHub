@@ -17,7 +17,6 @@ class GitHubGenericDaoTests: XCTestCase {
     override func setUp() {
 
         do {
-
             var realmConfiguration = Realm.Configuration.init()
             realmConfiguration.inMemoryIdentifier = "realmTest"
             testRealm = try Realm(configuration: realmConfiguration)

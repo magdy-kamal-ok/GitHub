@@ -13,7 +13,7 @@ import ObjectMapper
 class GenericDao<R:Object>: GenericDataLocalSource {
 
     var realm: Realm!
-
+    
     init(realm: Realm) {
 
         self.realm = realm

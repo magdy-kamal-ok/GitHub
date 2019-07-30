@@ -13,7 +13,7 @@ import RealmSwift
 import Alamofire
 
 
-class GenericBaseRepository<REMOTE:Mappable, LOCAL:Object>:
+class GenericBaseRepository<REMOTE:BaseModel, LOCAL:BaseModel>:
     GenericDataSourceContract {
 
         private let objGenericRequestClass: GenericRequestClass = GenericRequestClass<REMOTE>()
