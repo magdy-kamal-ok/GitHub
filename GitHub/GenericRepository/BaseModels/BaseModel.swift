@@ -1,5 +1,5 @@
 //
-//  BaseRemoteModel.swift
+//  BaseModel.swift
 //  GitHub
 //
 //  Created by mac on 7/30/19.
@@ -9,6 +9,7 @@
 import Foundation
 import ObjectMapper
 import RealmSwift
+
 
 class BaseModel: Object, Mappable {
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		042400CB22F27FE3009B5B3C /* ReposApiComponets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042400CA22F27FE3009B5B3C /* ReposApiComponets.swift */; };
 		04279F3322F0E90A00DAEF88 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04279F3222F0E90A00DAEF88 /* BaseModel.swift */; };
 		0436264F22E933B9007874EE /* HelperDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436264E22E933B9007874EE /* HelperDateFormatter.swift */; };
 		0436265122E934DE007874EE /* GitHubHelperDateFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0436265022E934DE007874EE /* GitHubHelperDateFormatterTests.swift */; };
@@ -21,10 +22,10 @@
 		04F5707122E8B51D0034B1C0 /* GitHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F5707022E8B51D0034B1C0 /* GitHubUITests.swift */; };
 		04F570B822E8B8980034B1C0 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F5707F22E8B8980034B1C0 /* UIHelper.swift */; };
 		04F570B922E8B8980034B1C0 /* GlobalUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F5708022E8B8980034B1C0 /* GlobalUtilities.swift */; };
-		04F570BA22E8B8980034B1C0 /* GenericDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F5708322E8B8980034B1C0 /* GenericDao.swift */; };
+		04F570BA22E8B8980034B1C0 /* RealmDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F5708322E8B8980034B1C0 /* RealmDao.swift */; };
 		04F570BB22E8B8980034B1C0 /* GenericDataSourceContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F5708522E8B8980034B1C0 /* GenericDataSourceContract.swift */; };
 		04F570BC22E8B8980034B1C0 /* GenericBaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F5708622E8B8980034B1C0 /* GenericBaseRepository.swift */; };
-		04F570BD22E8B8980034B1C0 /* GenericRequestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F5708822E8B8980034B1C0 /* GenericRequestClass.swift */; };
+		04F570BD22E8B8980034B1C0 /* AlamofireRequestClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F5708822E8B8980034B1C0 /* AlamofireRequestClass.swift */; };
 		04F570BE22E8B8980034B1C0 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04F5708A22E8B8980034B1C0 /* Localizable.strings */; };
 		04F570BF22E8B8980034B1C0 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F5708D22E8B8980034B1C0 /* UIColorExtension.swift */; };
 		04F570C022E8B8980034B1C0 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F5708E22E8B8980034B1C0 /* UITableViewExtension.swift */; };
@@ -68,6 +69,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		042400CA22F27FE3009B5B3C /* ReposApiComponets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposApiComponets.swift; sourceTree = "<group>"; };
 		04279F3222F0E90A00DAEF88 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		0436264E22E933B9007874EE /* HelperDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperDateFormatter.swift; sourceTree = "<group>"; };
 		0436265022E934DE007874EE /* GitHubHelperDateFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubHelperDateFormatterTests.swift; sourceTree = "<group>"; };
@@ -87,10 +89,10 @@
 		04F5707222E8B51D0034B1C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04F5707F22E8B8980034B1C0 /* UIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		04F5708022E8B8980034B1C0 /* GlobalUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalUtilities.swift; sourceTree = "<group>"; };
-		04F5708322E8B8980034B1C0 /* GenericDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericDao.swift; sourceTree = "<group>"; };
+		04F5708322E8B8980034B1C0 /* RealmDao.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDao.swift; sourceTree = "<group>"; };
 		04F5708522E8B8980034B1C0 /* GenericDataSourceContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericDataSourceContract.swift; sourceTree = "<group>"; };
 		04F5708622E8B8980034B1C0 /* GenericBaseRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericBaseRepository.swift; sourceTree = "<group>"; };
-		04F5708822E8B8980034B1C0 /* GenericRequestClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericRequestClass.swift; sourceTree = "<group>"; };
+		04F5708822E8B8980034B1C0 /* AlamofireRequestClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireRequestClass.swift; sourceTree = "<group>"; };
 		04F5708A22E8B8980034B1C0 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		04F5708D22E8B8980034B1C0 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		04F5708E22E8B8980034B1C0 /* UITableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
@@ -150,6 +152,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		042400C922F27FC2009B5B3C /* ApiComponets */ = {
+			isa = PBXGroup;
+			children = (
+				042400CA22F27FE3009B5B3C /* ReposApiComponets.swift */,
+			);
+			path = ApiComponets;
+			sourceTree = "<group>";
+		};
 		04279F3122F0E8EC00DAEF88 /* BaseModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,7 +254,7 @@
 		04F5708222E8B8980034B1C0 /* Local */ = {
 			isa = PBXGroup;
 			children = (
-				04F5708322E8B8980034B1C0 /* GenericDao.swift */,
+				04F5708322E8B8980034B1C0 /* RealmDao.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -261,7 +271,7 @@
 		04F5708722E8B8980034B1C0 /* Remote */ = {
 			isa = PBXGroup;
 			children = (
-				04F5708822E8B8980034B1C0 /* GenericRequestClass.swift */,
+				04F5708822E8B8980034B1C0 /* AlamofireRequestClass.swift */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -358,6 +368,7 @@
 		04F570A022E8B8980034B1C0 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				042400C922F27FC2009B5B3C /* ApiComponets */,
 				04F570A122E8B8980034B1C0 /* RespondeModels */,
 				04F570A422E8B8980034B1C0 /* BasicModels */,
 			);
@@ -719,10 +730,11 @@
 				04F570CA22E8B8980034B1C0 /* GithubRepository.swift in Sources */,
 				04F570D522E8B8980034B1C0 /* GithubTableViewCell.swift in Sources */,
 				04F570D822E8B8980034B1C0 /* Constants.swift in Sources */,
-				04F570BA22E8B8980034B1C0 /* GenericDao.swift in Sources */,
+				042400CB22F27FE3009B5B3C /* ReposApiComponets.swift in Sources */,
+				04F570BA22E8B8980034B1C0 /* RealmDao.swift in Sources */,
 				04F570CB22E8B8980034B1C0 /* RepoCacheModel.swift in Sources */,
 				04F570C822E8B8980034B1C0 /* BaseNetworkConnectionViewModel.swift in Sources */,
-				04F570BD22E8B8980034B1C0 /* GenericRequestClass.swift in Sources */,
+				04F570BD22E8B8980034B1C0 /* AlamofireRequestClass.swift in Sources */,
 				04F570B922E8B8980034B1C0 /* GlobalUtilities.swift in Sources */,
 				04279F3322F0E90A00DAEF88 /* BaseModel.swift in Sources */,
 				04F570BF22E8B8980034B1C0 /* UIColorExtension.swift in Sources */,

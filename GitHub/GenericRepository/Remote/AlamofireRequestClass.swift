@@ -1,5 +1,5 @@
 //
-//  GenericRequestClass.swift
+//  AlamofireRequestClass.swift
 //  GitHub
 //
 //  Created by mac on 7/24/19.
@@ -11,15 +11,24 @@ import RxSwift
 import ObjectMapper
 import Alamofire
 
-class GenericRequestClass<U:Mappable>: GenericDataRemoteSource {
 
-    func callApi(url: String, params: Parameters?, headers: HTTPHeaders?) -> Observable<[U]>? {
+class AlamofireRequestClass : GenericDataRemoteSource {
+    func callApi<R>(apiComponents:ApiHeaders_Parametes_Url_Protocol) -> Observable<[R]>? where R : BaseModel {
+        
+        let url = apiComponents.getApiUrl()
+        let params = apiComponents.getParameters()
+        let headers = apiComponents.getHeaders() as? HTTPHeaders
+        var parameterEncoding:Alamofire.ParameterEncoding = JSONEncoding.default
+        switch apiComponents.getParameterEncodeing() {
+        case .json:
+            parameterEncoding =  JSONEncoding.default
+        }
         return Observable.create {
             observer in
             Alamofire.request(url,
-                method: .get,
-                parameters: params, encoding: JSONEncoding.default, headers: headers
-            )
+                              method: .get,
+                              parameters: params, encoding: parameterEncoding, headers: headers
+                )
                 .responseJSON { response in
                     switch response.result {
                     case .success(let json):
@@ -27,10 +36,10 @@ class GenericRequestClass<U:Mappable>: GenericDataRemoteSource {
                             else {
                                 return
                         }
-                        var responseList: [U] = [U]()
+                        var responseList: [R] = [R]()
                         for item in value
                         {
-                            responseList.append(U(JSON: item)!)
+                            responseList.append(R(JSON: item)!)
                         }
                         observer.onNext(responseList)
                     case .failure(let error):
@@ -41,4 +50,6 @@ class GenericRequestClass<U:Mappable>: GenericDataRemoteSource {
             }
         }
     }
+    
+
 }

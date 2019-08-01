@@ -9,11 +9,12 @@
 import Foundation
 import RxSwift
 import Reachability
+import RealmSwift
 
 class GithubViewModel: BaseNetworkConnectionViewModel {
 
     let disposeBag = DisposeBag()
-    let githubRepo = GithubRepository()
+    var githubRepo : GithubRepository?
     public private(set) var offset: Int = 1
     public private(set) var userName: String = ""
     private var reposList = [RepoItemModel]()
@@ -26,12 +27,19 @@ class GithubViewModel: BaseNetworkConnectionViewModel {
 
     override init() {
         super.init()
+        do {
+            let realm = try Realm()
+            githubRepo = GithubRepository(requestManager: AlamofireRequestClass(), daoManager: RealmDao(realm: realm))
+        }
+        catch{
+            assertionFailure("error creating realm object")
+        }
         initializeSubscribers()
     }
 
     private func initializeSubscribers()
     {
-        githubRepo.objObservableLocal.subscribe(onNext: { (cachedRepoModel) in
+        githubRepo?.objObservableLocal.subscribe(onNext: { (cachedRepoModel) in
             if !self.isNetworkConnected()
             {
                 self.handleLoadedRepos(reposList: cachedRepoModel.reposList.toArray())
@@ -42,7 +50,7 @@ class GithubViewModel: BaseNetworkConnectionViewModel {
                 print("Completed")
             }).disposed(by: disposeBag)
 
-        githubRepo.objObservableRemoteData.subscribe(onNext: { (reposList) in
+        githubRepo?.objObservableRemoteData.subscribe(onNext: { (reposList) in
             self.handleLoadedRepos(reposList: reposList)
             }, onError: { (error) in
                 print(error)
@@ -50,7 +58,7 @@ class GithubViewModel: BaseNetworkConnectionViewModel {
                 print("Completed")
             }).disposed(by: disposeBag)
 
-        githubRepo.objObservableErrorModel.subscribe(onNext: { (errorModel) in
+        githubRepo?.objObservableErrorModel.subscribe(onNext: { (errorModel) in
             self.handleErrorModel(errorModel: errorModel)
         }, onError: { (error) in
                 print(error)
@@ -89,7 +97,7 @@ class GithubViewModel: BaseNetworkConnectionViewModel {
     private func getRepoList()
     {
         self.showProgressLoaderIndicator()
-        self.githubRepo.getRepoList(userName: self.userName, offset: self.offset)
+        self.githubRepo?.getRepoList(userName: self.userName, offset: self.offset)
     }
 
     func getReposWith(text: String)
