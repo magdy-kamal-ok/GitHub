@@ -8,7 +8,12 @@
 
 import Foundation
 import RealmSwift
-import ObjectMapper
+
+
+extension Object: Storable
+{
+    
+}
 
 class RealmDao: GenericDataLocalSource {
     

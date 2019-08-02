@@ -8,7 +8,6 @@
 
 import Foundation
 import RxSwift
-import Reachability
 import RealmSwift
 
 class GithubViewModel: BaseNetworkConnectionViewModel {
@@ -42,7 +41,7 @@ class GithubViewModel: BaseNetworkConnectionViewModel {
         githubRepo?.objObservableLocal.subscribe(onNext: { (cachedRepoModel) in
             if !self.isNetworkConnected()
             {
-                self.handleLoadedRepos(reposList: cachedRepoModel.reposList.toArray())
+                self.handleLoadedRepos(reposList: cachedRepoModel.getReposArray())
             }
         }, onError: { (error) in
                 print(error)

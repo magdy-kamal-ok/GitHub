@@ -46,7 +46,15 @@ class RepoCacheModel: BaseModel {
     private func compoundKeyValue() -> String {
         return "\(id)-\(offset)"
     }
-
+    
+    func saveArrayOfRepos(_ array:[RepoItemModel])
+    {
+        self.reposList.append(objectsIn: array)
+    }
+    func getReposArray() -> [RepoItemModel]
+    {
+        return self.reposList.toArray()
+    }
 
 
 }

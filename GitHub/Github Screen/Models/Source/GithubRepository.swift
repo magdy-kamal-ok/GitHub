@@ -8,7 +8,6 @@
 
 import Foundation
 import RealmSwift
-import ObjectMapper
 
 class GithubRepository: GenericBaseRepository<RepoItemModel, RepoCacheModel> {
     
@@ -49,9 +48,7 @@ class GithubRepository: GenericBaseRepository<RepoItemModel, RepoCacheModel> {
             }
             repoCache.userName = self.userName
             repoCache.offset = self.offset
-            let repoList = List<RepoItemModel>()
-            repoList.append(objectsIn: remote)
-            repoCache.reposList = repoList
+            repoCache.saveArrayOfRepos(remote)
             self.insertDataToLocal(genericDataModel: repoCache)
         }
         

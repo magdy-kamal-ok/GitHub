@@ -8,10 +8,6 @@
 
 import Foundation
 import RxSwift
-import ObjectMapper
-import RealmSwift
-import Alamofire
-
 
 class GenericBaseRepository<REMOTE:BaseModel, LOCAL:BaseModel>:GenericDataSourceContract {
     
