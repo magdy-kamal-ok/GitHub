@@ -38,7 +38,7 @@ class GithubViewModel: BaseNetworkConnectionViewModel {
 
     private func initializeSubscribers()
     {
-        githubRepo?.objObservableLocal.subscribe(onNext: { (cachedRepoModel) in
+        githubRepo?.objObservableLocal.distinctUntilChanged().subscribe(onNext: { (cachedRepoModel) in
             if !self.isNetworkConnected()
             {
                 self.handleLoadedRepos(reposList: cachedRepoModel.getReposArray())
@@ -50,7 +50,10 @@ class GithubViewModel: BaseNetworkConnectionViewModel {
             }).disposed(by: disposeBag)
 
         githubRepo?.objObservableRemoteData.subscribe(onNext: { (reposList) in
-            self.handleLoadedRepos(reposList: reposList)
+            if self.isNetworkConnected()
+            {
+                self.handleLoadedRepos(reposList: reposList)
+            }
             }, onError: { (error) in
                 print(error)
             }, onCompleted: {
@@ -69,6 +72,7 @@ class GithubViewModel: BaseNetworkConnectionViewModel {
 
     func handleLoadedRepos(reposList: [RepoItemModel])
     {
+        
         if reposList.count != 0
         {
             if isLoadingMore

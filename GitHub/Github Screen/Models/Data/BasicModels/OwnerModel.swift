@@ -11,7 +11,7 @@ import RealmSwift
 import ObjectMapper
 import ObjectMapper_Realm
 
-class OwnerModel: BaseModel {
+class OwnerModel: Object, Mappable {
     
     @objc dynamic var id: Int = 0
     @objc dynamic var name: String = ""
@@ -22,7 +22,7 @@ class OwnerModel: BaseModel {
         self.init()
     }
     
-    override func mapping(map: Map) {
+    func mapping(map: Map) {
         
         id              <- map["id"]
         name            <- map["login"]

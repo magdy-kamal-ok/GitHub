@@ -15,7 +15,6 @@ public protocol Storable
 {
     
 }
-
 enum ParameterEncoding {
     case json
 }

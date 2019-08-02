@@ -38,7 +38,8 @@ class AlamofireRequestClass : GenericDataRemoteSource {
                         var responseList: [R] = [R]()
                         for item in value
                         {
-                            responseList.append(R(JSON: item)!)
+                            let itemObject = R(dict: item)!
+                            responseList.append(itemObject)
                         }
                         observer.onNext(responseList)
                     case .failure(let error):

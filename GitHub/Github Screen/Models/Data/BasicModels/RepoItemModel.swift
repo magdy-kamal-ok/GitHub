@@ -38,6 +38,10 @@ class RepoItemModel: BaseModel {
         owner           <- map["owner"]
 
     }
+    convenience required init(dict: [String:Any]) {
+        self.init(JSON: dict)!
+    }
+    
     override class func primaryKey() -> String? {
         return "id";
     }

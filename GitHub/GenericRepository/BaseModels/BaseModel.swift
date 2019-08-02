@@ -18,9 +18,10 @@ class BaseModel: Object, Mappable {
         self.init()
     }
     
+    required convenience init?(dict: [String:Any]) {
+        self.init()
+    }
     func mapping(map: Map) {
-        
-
         
     }
 

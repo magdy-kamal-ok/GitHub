@@ -129,6 +129,7 @@ extension GithubViewController: UISearchBarDelegate {
 
         if let searchText = searchBar.text
         {
+            print("Hello ")
             self.githubViewModel.getReposWith(text: searchText)
         }
     }
