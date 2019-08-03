@@ -22,26 +22,21 @@ class RealmDao: GenericDataLocalSource {
     var realm: Realm!
     
     init(realm:Realm) {
-        do{
-            self.realm = realm
-        }
-        catch{
-            
-        }
+        self.realm = realm
     }
     
     func fetch<L>(predicate: NSPredicate?, type: L.Type) -> L? where L : Storable {
         do {
             if let predicate = predicate
             {
-                var objects = self.realm.objects(type as! Object.Type)
+                let objects = self.realm.objects(type as! Object.Type)
                 return objects.filter(predicate).first as? L
             }
             else
             {
-                var objects = self.realm.objects(type as! Object.Type)
+                let objects = self.realm.objects(type as! Object.Type)
                 
-                return objects.first as! L
+                return objects.first as? L
             }
         } catch (let error) {
             print(error)

@@ -8,6 +8,7 @@
 
 import XCTest
 import RxSwift
+import RealmSwift
 @testable import GitHub
 
 class GitHubRepositoryTests: XCTestCase {
@@ -15,7 +16,15 @@ class GitHubRepositoryTests: XCTestCase {
     var sut: GithubRepository!
     let disposeBag = DisposeBag()
     override func setUp() {
-        sut = GithubRepository()
+        do {
+            var realmConfiguration = Realm.Configuration.init()
+            realmConfiguration.inMemoryIdentifier = "realmTest"
+            let testRealm = try Realm(configuration: realmConfiguration)
+            sut = GithubRepository(requestManager: AlamofireRequestClass(), daoManager: RealmDao(realm: testRealm))
+        }
+        catch{
+            assertionFailure("error creating realm object")
+        }
     }
 
     override func tearDown() {
