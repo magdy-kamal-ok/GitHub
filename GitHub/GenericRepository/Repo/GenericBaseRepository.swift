@@ -121,7 +121,6 @@ class GenericBaseRepository<REMOTE:BaseModel, LOCAL:BaseModel>:GenericDataSource
     func insertDataToLocal(genericDataModel: LOCAL) {
         // override this if needed
         objGenericDao.insert(genericDataModel: genericDataModel)
-        self.objSubjectDao.onNext(genericDataModel)
         
     }
     

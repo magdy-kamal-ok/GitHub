@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04218BFB22F5D3DD00C9DE02 /* AlamofireRequestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04218BFA22F5D3DD00C9DE02 /* AlamofireRequestTests.swift */; };
+		04218BFD22F6054A00C9DE02 /* Repos.json in Resources */ = {isa = PBXBuildFile; fileRef = 04218BFC22F6054A00C9DE02 /* Repos.json */; };
 		042400CB22F27FE3009B5B3C /* ReposApiComponets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042400CA22F27FE3009B5B3C /* ReposApiComponets.swift */; };
 		0424CABA22F3CF7D0014C606 /* GlobalProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0424CAB922F3CF7D0014C606 /* GlobalProtocols.swift */; };
 		04279F3322F0E90A00DAEF88 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04279F3222F0E90A00DAEF88 /* BaseModel.swift */; };
@@ -71,6 +72,7 @@
 
 /* Begin PBXFileReference section */
 		04218BFA22F5D3DD00C9DE02 /* AlamofireRequestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireRequestTests.swift; sourceTree = "<group>"; };
+		04218BFC22F6054A00C9DE02 /* Repos.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Repos.json; sourceTree = "<group>"; };
 		042400CA22F27FE3009B5B3C /* ReposApiComponets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReposApiComponets.swift; sourceTree = "<group>"; };
 		0424CAB922F3CF7D0014C606 /* GlobalProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalProtocols.swift; sourceTree = "<group>"; };
 		04279F3222F0E90A00DAEF88 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				0436265422E935C7007874EE /* GitHubViewModelTests.swift */,
 				0436265022E934DE007874EE /* GitHubHelperDateFormatterTests.swift */,
 				04F5706722E8B51D0034B1C0 /* Info.plist */,
+				04218BFC22F6054A00C9DE02 /* Repos.json */,
 			);
 			path = GitHubTests;
 			sourceTree = "<group>";
@@ -598,6 +601,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04218BFD22F6054A00C9DE02 /* Repos.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
