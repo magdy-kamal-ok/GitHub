@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ObjectMapper
 
 // this protocol for generic savinf and fetching method
 // for Local DB like CoreData, Realm and, ObjectBox
@@ -15,13 +16,23 @@ public protocol Storable
 {
     
 }
+// conform to this protocol so as can be used in case
+// of using objectmapper or in case Codable
+protocol RemoteMappable
+{
+    init?(dict: [String:Any])
+}
+
+// this enum to get encoding required
 enum ParameterEncoding {
     case json
 }
+
 // this protocol for All requirment for calling Api
-protocol ApiHeaders_Parametes_Url_Protocol {
+protocol ApiHeadersParametesUrlProtocol {
     func getHeaders()->[String:Any]?
     func getParameters()->[String:Any]?
     func getApiUrl()->String
     func getParameterEncodeing()->ParameterEncoding
+    func getHttpMethod()->String
 }

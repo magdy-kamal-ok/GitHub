@@ -170,5 +170,19 @@ class GithubViewModel: BaseNetworkConnectionViewModel {
 
         }
     }
-
+    
+    public func showProgressLoaderIndicator() {
+        DispatchQueue.main.async {
+            UIHelper.showProgressBarWithDimView()
+        }
+        
+    }
+    
+    
+    public func hideProgressLoaderIndicator() {
+        DispatchQueue.main.async {
+            UIHelper.dissmissProgressBar()
+        }
+        
+    }
 }

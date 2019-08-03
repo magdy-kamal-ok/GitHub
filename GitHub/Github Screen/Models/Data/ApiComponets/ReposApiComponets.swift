@@ -12,8 +12,10 @@ struct ReposApiComponets {
     var name:String = ""
     var offset:Int = 1
 }
-extension ReposApiComponets:ApiHeaders_Parametes_Url_Protocol
+extension ReposApiComponets:ApiHeadersParametesUrlProtocol
 {
+ 
+    
     func getHeaders() -> [String : Any]? {
         let headers = [
             "Content-Type": "application/json"
@@ -34,6 +36,8 @@ extension ReposApiComponets:ApiHeaders_Parametes_Url_Protocol
     func getParameterEncodeing() -> ParameterEncoding {
         return .json
     }
-    
+    func getHttpMethod() -> String {
+        return "GET"
+    }
     
 }

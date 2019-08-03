@@ -7,11 +7,9 @@
 //
 
 import Foundation
-import RealmSwift
 import ObjectMapper
-import ObjectMapper_Realm
 
-class RepoItemModel: BaseModel {
+class RepoItemModel: BaseModel, Mappable {
 
     @objc dynamic var id: Int = 0
     @objc dynamic var repoTitle: String = ""

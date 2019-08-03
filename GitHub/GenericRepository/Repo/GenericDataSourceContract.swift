@@ -23,6 +23,6 @@ protocol GenericDataLocalSource {
 protocol GenericDataRemoteSource {
     
     
-    func callApi<R:BaseModel>(apiComponents:ApiHeaders_Parametes_Url_Protocol) -> Observable<[R]>?
+    func callApi<R:RemoteMappable>(apiComponents:ApiHeadersParametesUrlProtocol) -> Observable<[R]>?
     
 }

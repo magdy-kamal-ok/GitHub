@@ -11,7 +11,12 @@ import ObjectMapper
 import RealmSwift
 
 
-class BaseModel: Object, Mappable {
+extension RemoteMappable where Self: Mappable
+{
+    
+}
+
+class BaseModel: Object, RemoteMappable {
     
 
     required convenience public init?(map: Map) {

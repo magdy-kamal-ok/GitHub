@@ -12,7 +12,7 @@ import Alamofire
 
 
 class AlamofireRequestClass : GenericDataRemoteSource {
-    func callApi<R>(apiComponents:ApiHeaders_Parametes_Url_Protocol) -> Observable<[R]>? where R : BaseModel {
+    func callApi<R>(apiComponents:ApiHeadersParametesUrlProtocol) -> Observable<[R]>? where R : RemoteMappable {
         
         let url = apiComponents.getApiUrl()
         let params = apiComponents.getParameters()
@@ -22,10 +22,11 @@ class AlamofireRequestClass : GenericDataRemoteSource {
         case .json:
             parameterEncoding =  JSONEncoding.default
         }
+        let method = HTTPMethod.init(rawValue: apiComponents.getHttpMethod()) ?? .get
         return Observable.create {
             observer in
             Alamofire.request(url,
-                              method: .get,
+                              method: method,
                               parameters: params, encoding: parameterEncoding, headers: headers
                 )
                 .responseJSON { response in

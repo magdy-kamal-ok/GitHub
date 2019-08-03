@@ -17,11 +17,12 @@ class BaseNetworkConnectionViewModel: NSObject {
         super.init()
         do {
             try self.reachability.startNotifier()
+            self.checkIfNoConnection()
+            self.checkIfConnection()
         } catch {
 
         }
-        self.checkIfNoConnection()
-        self.checkIfConnection()
+      
     }
 
     private func checkIfConnection() {
@@ -48,18 +49,5 @@ class BaseNetworkConnectionViewModel: NSObject {
         // override this function in extended class
     }
 
-    public func showProgressLoaderIndicator() {
-        DispatchQueue.main.async {
-            UIHelper.showProgressBarWithDimView()
-        }
 
-    }
-
-
-    public func hideProgressLoaderIndicator() {
-        DispatchQueue.main.async {
-            UIHelper.dissmissProgressBar()
-        }
-
-    }
 }

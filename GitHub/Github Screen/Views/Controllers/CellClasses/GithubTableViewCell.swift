@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 class GithubTableViewCell: UITableViewCell {
 
     @IBOutlet weak var repoOwnerImageView: UIImageView!
@@ -23,7 +21,6 @@ class GithubTableViewCell: UITableViewCell {
     var zoomImageView: UIImageView?
     var startingFrame: CGRect?
     var blackBackgroundView: UIView?
-
     override func awakeFromNib() {
         super.awakeFromNib()
 

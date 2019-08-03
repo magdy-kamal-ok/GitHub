@@ -41,7 +41,7 @@ class GenericBaseRepository<REMOTE:BaseModel, LOCAL:BaseModel>:GenericDataSource
         self.objGenericDao = daoManager
     }
     
-    func getGenericData(apiComponents:ApiHeaders_Parametes_Url_Protocol, bool: Bool = true)
+    func getGenericData(apiComponents:ApiHeadersParametesUrlProtocol, bool: Bool = true)
     {
         if bool {
             if let cashedData = self.fetch(predicate: self.getPredicate(), type: LOCAL.self)
@@ -74,7 +74,7 @@ class GenericBaseRepository<REMOTE:BaseModel, LOCAL:BaseModel>:GenericDataSource
         self.objSubjectRemote.onNext(responseObj as! [REMOTE])
     }
     
-    func callApi<R>(apiComponents:ApiHeaders_Parametes_Url_Protocol) -> Observable<[R]>? where R : BaseModel {
+    func callApi<R>(apiComponents:ApiHeadersParametesUrlProtocol) -> Observable<[R]>? where R : RemoteMappable {
         
         if let objObserve:Observable<[R]> = objGenericRequestClass?.callApi(apiComponents:apiComponents)
         {
@@ -83,7 +83,7 @@ class GenericBaseRepository<REMOTE:BaseModel, LOCAL:BaseModel>:GenericDataSource
         return Observable.empty()
     }
     
-    func callBackEndApi(apiComponents:ApiHeaders_Parametes_Url_Protocol)
+    func callBackEndApi(apiComponents:ApiHeadersParametesUrlProtocol)
     {
         
         if let objObserve:Observable<[REMOTE]> = self.callApi(apiComponents:apiComponents)
