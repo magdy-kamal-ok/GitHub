@@ -78,8 +78,7 @@ class AlamofireRequestTests: XCTestCase {
         let expectation = XCTestExpectation.init(description: "test success Reposs request")
         var responseResult: [RepoItemModel]!
         var errorResponse: Error!
-        let repoApiComponents = MockReposApiComponets.init(name: "john", offset: offset)
-        
+        let repoApiComponents = ReposApiComponets.init(name: "john", offset: offset)
         sut.callApi(apiComponents: repoApiComponents)?.subscribe(
             onNext: {(responseObj:[RepoItemModel]) in
                 responseResult = responseObj
