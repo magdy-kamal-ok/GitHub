@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import RealmSwift
 
 class GithubRepository: GenericBaseRepository<RepoItemModel, RepoCacheModel> {
     
